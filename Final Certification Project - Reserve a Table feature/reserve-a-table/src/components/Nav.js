@@ -1,5 +1,4 @@
 import React from "react"
-import "../assets/stylesheets/styles-top-nav.css"
 
 function Nav() {
     return (

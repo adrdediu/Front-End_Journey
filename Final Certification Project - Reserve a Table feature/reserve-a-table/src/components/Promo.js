@@ -14,7 +14,7 @@ const Promo = () => {
         <Heading className="promo-title-text">This weeks specials!</Heading>    
         <Button className="promo-menu-button">Online Menu</Button>
     </HStack>
-      <HStack spacing={29} justifyContent="space-between"  className="promo-section" >
+      <HStack  className="promo-section" justifyContent="space-between" >
           <DishCard 
               title="Greek Salad" 
               imageSrc={GreekSaladSrc}

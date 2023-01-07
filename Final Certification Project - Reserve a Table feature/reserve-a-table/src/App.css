@@ -150,14 +150,14 @@
     border: 1px solid #000000;
     border-radius: 16px;
     color: #000;
-  font-size: 22px;
-  font-weight: bold;
-  font-family: 'Karla';
-  z-index: 0;
-  text-align: center;
-  align-items: center;
-  white-space: nowrap;
-  flex-direction: column;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Karla';
+    z-index: 0;
+    text-align: center;
+    align-items: center;
+    white-space: nowrap;
+    flex-direction: column;
 }
 
 .dish-card {
@@ -199,6 +199,7 @@
     font-size: 16px;
     line-height: 19px;
     color: #495E57;
+    height:117px;
 }
 .dish-card-order {
     font-family: 'Karla';
@@ -217,17 +218,17 @@
     background-size:cover;
 }
 .testimonials-title {
-margin-top:140px;
-font-family: 'Markazi Text';
-font-style: normal;
-font-weight: 500;
-font-size: 41px;
-line-height: 49px;
-display: flex;
-align-items: center;
-text-align: center;
-justify-content: center;
-color: #000000;
+    margin-top:140px;
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 41px;
+    line-height: 49px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #000000;
 }
 
 .testimonials-section {
@@ -366,62 +367,58 @@ color: #495E57;
     align-items: center;
     white-space: nowrap;
     flex-direction: column;
+    margin-top:50px;
 }
 
 .footer {
     background-color:#495E57;
-    height:auto;
+    height:350px;
     width:100%;
 }
 .footer-content {
     max-width:940px;
     margin:0 auto;
-    align-items:end;
     padding:30px 0; 
+}
+.footer-category{
+    height:270px;
 }
 
 .footer-logo {
     height:270px;
-    width:150px;
-    padding-top:6px;
+    width:156px;
 }
 
 .footer-categories-title {
     font-family: 'Karla';
-font-style: normal;
-font-weight: 500;
-font-size: 22px;
-line-height: 26px;
-color: #FFFFFF;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    color: #FFFFFF;
 }
 .nav-bot a,.nav-bot-list-item {
     font-family: 'Karla';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 23px;
     display: flex;
     align-items: center;
     text-decoration: none;
     color: #FFFFFF;
-    padding:10px 0;
+    padding:1px 0;
 }
 .nav-bot-list-subitem {
     font-family: 'Karla';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 23px;
     display: flex;
     align-items: center;
     text-decoration: none;
     color: #FFFFFF;
-    padding:10px 0px 10px 10px
+    padding-left:10px;
 }
 .social-icon {
-
-    width:25px;
-    height:25px;
     border-radius:25px; 
     border:3px solid white;
 }
@@ -462,6 +459,7 @@ color: #FFFFFF;
     }
     .dish-card-description {
         font-size:1.655vw;
+        line-height:2.5vw;
     }
     .review-card {
         width:20.683vw;
@@ -489,17 +487,21 @@ color: #FFFFFF;
     .review-card-description {
         max-width:15.512vw;
         font-size:1.655vw;
+        line-height:2.5vw;
         height:auto;
     }
     .about {
         height:auto;
-        margin-bottom:50px;
+    }
+    .about-content {
+        height:auto;
     }
     .about-heading {
         font-size:6.308vw;
     }
     .about-image-group {
         width:56.877vw;
+        padding-bottom: 25px;
     }
     .about-img1,.about-img2 {
         width:32.058vw;
@@ -511,10 +513,25 @@ color: #FFFFFF;
     .about-story {
         font-size:1.655vw;
         width:28.438vw;
+        line-height:2.5vw;
     }
     .about-readmore-btn {
         width:20.683vw;
         font-size:2.275vw;
+    }
+    .footer {
+        height:36.194vw;
+    }
+    .footer-logo {
+        height:27.921vw;
+        width:16.132vw;
+    }
+    .footer-content {
+        padding: 3.102vw 0;
+    }
+
+    .footer-category {
+        height:27.921vw;
     }
     .footer-categories-title {
         font-size:2.275vw;
@@ -525,13 +542,9 @@ color: #FFFFFF;
     .nav-bot-list-subitem {
         font-size:1.861vw;
     }
-    .footer-logo {
-        height:27.921vw;
-        width:15.512vw;
-    }
     .social-icon {
-        width:2.585vw;
-        height:2.585vw;
+        width:2vw;
+        height:2vw;
         border-radius:25vw;
     }
  }
@@ -541,27 +554,40 @@ color: #FFFFFF;
  /*BELOW FONTS AND WIDTHS FOR Some elements*/
 @media only screen and (max-width:751px) {
     .hero {
-        width:100vw;
+        width:100%;
+        height:50.599vw;
+    }
+    .hero-section-text {
+        height:42.610vw;
     }
     .hero-title {
         font-size:8.522vw;
+        height:10.253vw;
+        margin-top:3.329vw;
     }
     .hero-subtitle {
         font-size:5.326vw;
+        margin-bottom:2.663vw;
     }
     .hero-description {
         font-size:2.663vw;
         width:36.884vw;
+        height:15.446vw;
+        margin-bottom:2.663vw;
     }
     .hero-section-image {
         width:47.936vw;
-        max-height:440px;
+        max-height:58.589vw;
     }
     .hero-reserve-button{
         width:28.096vw;
+        height:7.989vw;
     }
     .hero-reserve-button-text{
         font-size:2.929vw;
+    }
+    .promo-title {
+        margin-top:19.973vw
     }
     .promo-title-text {
         font-size:8.522vw;
@@ -570,22 +596,21 @@ color: #FFFFFF;
         font-size:2.929vw;
         width:26.631vw;
     }
-    .dish-card{
-        width:35.686vw;
-    }
     .testimonials-title{
         font-size:5.459vw;
     }
     .dish-card-image {
         height:auto;
     }
+    .dish-card,.dish-card-image,.dish-card-content,.dish-card-description {
+        height:auto;
+    }
+    
 }
  
  @media only screen and (max-width: 601px ) {
     .nav-top a {
         font-size:3vw;
     }
-    .about-content{
-        height:425px;
-    }
+ 
  }

@@ -3,13 +3,17 @@ import LogoFooter from "../assets/images/logoFooter.png"
 import { SocialIcon } from 'react-social-icons';
 
 export default function Footer() {
+
+    const iconSize = {
+        height: 25,
+        width: 25,
+    }
+
     return (
         <footer className="footer">
-            <HStack justifyContent="space-between" className="footer-content" alignItems="start">
-            <Box >
-                <img src={LogoFooter} alt="footer-logo" className="footer-logo"  />
-            </Box>
-            <VStack alignItems="start" justifyContent="center">
+            <HStack justifyContent="space-between" className="footer-content" alignItems="center">
+            <img src={LogoFooter} alt="footer-logo" className="footer-logo"/>
+            <VStack alignItems="start" className="footer-category">
                 <Text className="footer-categories-title">Navigation</Text>
                 <nav className="nav-bot">
                     <a href="/" className="nav-item">Home</a>
@@ -20,7 +24,7 @@ export default function Footer() {
                     <a href="/log-in" className="nav-item">Log In</a>
                 </nav>
             </VStack>
-            <VStack alignItems="start" justifyContent="center">
+            <VStack alignItems="start" className="footer-category">
                 <Text className="footer-categories-title">Contact</Text>
                 <UnorderedList listStyleType="none" >
                     <ListItem className="nav-bot-list-item" >Address</ListItem>
@@ -31,26 +35,26 @@ export default function Footer() {
                     <ListItem className="nav-bot-list-subitem">little_lemon@gmail.com</ListItem>
                 </UnorderedList>
             </VStack>
-            <VStack alignItems="start" justifyContent="center">
-                <Text className="footer-categories-title">Social Media Links</Text>
-                <SimpleGrid columns={2} spacing = {10}>
+            <VStack alignItems="center" alignContent="start" className="footer-category"  >
+                <Text className="footer-categories-title">Social Media</Text>
+                <SimpleGrid columns={2} className="footer-icons" >
                     <Box class="social-icon">
-                        <SocialIcon url="https://wwww.instagram.com/littlelemon"/>
+                        <SocialIcon url="https://wwww.instagram.com/littlelemon" style={iconSize }/>
                     </Box>
                     <Box class="social-icon">
-                        <SocialIcon url="https://linkedin.com/in/littlelemon" />
+                        <SocialIcon url="https://linkedin.com/in/littlelemon"style={iconSize} />
                     </Box>
                     <Box class="social-icon">
-                        <SocialIcon url="https://whatsapp.com/littlelemon"/>
+                        <SocialIcon url="https://whatsapp.com/littlelemon" style={iconSize}/>
                     </Box>
                     <Box class="social-icon">
-                        <SocialIcon url="https://twitter.com/littlelemon"/>
+                        <SocialIcon url="https://twitter.com/littlelemon" style={iconSize}/>
                     </Box>
                     <Box class="social-icon">
-                        <SocialIcon url="https://facebook.com/littlelemon"/>
+                        <SocialIcon url="https://facebook.com/littlelemon" style={iconSize}/>
                     </Box>
                     <Box class="social-icon">
-                        <SocialIcon url="https://sharethis.com/littlelemon"/>
+                        <SocialIcon url="https://sharethis.com/littlelemon" style={{ height: 25, width: 25 }}/>
                     </Box>
                 </SimpleGrid>
             </VStack>

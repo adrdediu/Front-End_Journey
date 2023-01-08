@@ -4,7 +4,7 @@ import BackButton from "./BackButton"
 import ProgressBar from "./ProgressBar"
 import Banner from "./Banner.js"
 import ConfirmButton from "./ConfirmButton.js"
-import resAccCrtImg from "../assets/images/accountCreationBanner.jpg"
+import resAccCrtImg from "../assets/images/reservationConfirmBanner.jpg"
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function ReservationConfirmation() {

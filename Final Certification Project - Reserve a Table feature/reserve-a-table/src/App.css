@@ -405,7 +405,9 @@ color: #495E57;
     align-items: center;
     text-decoration: none;
     color: #FFFFFF;
-    padding:1px 0;
+    padding-top:1px;
+    margin-bottom:10px;
+
 }
 .nav-bot-list-subitem {
     font-family: 'Karla';
@@ -417,6 +419,7 @@ color: #495E57;
     text-decoration: none;
     color: #FFFFFF;
     padding-left:10px;
+    margin-bottom:12px;
 }
 .social-icon {
     border-radius:25px; 
@@ -538,9 +541,11 @@ color: #495E57;
     }
     .nav-bot a,.nav-bot-list-item{
         font-size:1.861vw;
+        margin-bottom:1vw;
     }
     .nav-bot-list-subitem {
         font-size:1.861vw;
+        margin-bottom:1.2vw;
     }
     .social-icon {
         width:2vw;
@@ -614,3 +619,6 @@ color: #495E57;
     }
  
  }
+
+ /* Classes for other Components */
+

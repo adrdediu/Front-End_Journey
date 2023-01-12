@@ -1,0 +1,26 @@
+function gradingStudents(grades) {
+    // Write your code here
+    let roundedGrades = [];
+        for(let i = 0; i< grades.length; i++) {
+            if(grades[i] >=0 && grades[i] <=100) {
+                if(grades[i] >= 38) {
+                    if((10 - grades[i]%10) < 3) {
+                        roundedGrades[i] = grades[i] + (10 - grades[i]%10);
+                    } 
+                    else if ((5 - grades[i]%10) > 0 && (5 - grades[i]%10) < 3) {
+                            roundedGrades[i] = grades[i] + (5 - grades[i]%10);
+                         } 
+                         else roundedGrades[i] = grades[i];
+                }
+                else roundedGrades[i] = grades[i];
+            } else return `Please provide a number between 0 and 100 for student ${i-1} grade.`;
+        }
+        return roundedGrades;
+}
+
+let grades = [73,67,38,33];
+
+grades = gradingStudents(grades);
+grades.forEach ((grade)=> {
+    console.log(grade);
+})

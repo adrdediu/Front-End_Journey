@@ -1,0 +1,4 @@
+The Little Lemon restaurant does not have a reserve-a-table feature implemented yet on the website, and
+users might want use such a feature  out of convenience so they can reserve easily and in a matter of minutes a 
+table without having to contact directly someone from the restaurant.
+

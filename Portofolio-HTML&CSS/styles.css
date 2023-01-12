@@ -1,0 +1,166 @@
+*{
+    margin: 0; 
+    padding: 0; 
+    list-style: none;
+    font-family: 'Times New Roman',Times,serif;
+}
+
+body{
+    background-color:#00003f;
+    margin:0;
+    
+}
+
+header {
+    background-color: #00003f;
+    padding: 2.5% 5%;
+    border-bottom-style: solid;
+    border-bottom-color: goldenrod;
+    border-bottom-width: 1px;   
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h2:hover,h2:focus {
+    color: #fff;
+	text-shadow: -1px 1px 10px #ffc, 1px -1px 10px #fff;
+    transition: all .3s ease-in-out;
+}
+
+
+nav {
+    background-color: #00003f;
+    padding:1.25% 0;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 5% 2% 5%;
+    padding: 2.5% 0 0.5% 0;
+    font-size: 1.5rem;
+    border-bottom-style: solid;
+    border-bottom-color: goldenrod;
+    border-bottom-width: 1px;   
+}
+
+nav a:link, a:visited {
+    text-decoration:none;
+    color:white;
+}
+
+nav a:hover, a:focus {
+	color: #fff;
+	text-shadow: -1px 1px 10px #ffc, 1px -1px 10px #fff;
+    transition: all .3s ease-in-out;
+}
+
+main {
+    background-color: white;
+
+}
+
+.promoWrap {
+    overflow: hidden;
+    position: relative;
+    padding:25% 0 0 0;
+}
+
+.promoBg {
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.promoText {
+    color:white;
+    position: relative;
+    padding:100px 2.5% 0 2.5%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent);
+}
+.promoText > h2,p {
+    margin-bottom:2.5%;
+}
+
+section {
+    display: flex;
+}
+
+article {
+    flex: 1;
+}
+
+.overviewCards {
+    margin:5% 1.25%;
+    padding:2.5%;
+    background-color:#00003f;
+    border-radius:2%;
+    color:white;
+}
+
+.overviewCards img {
+    margin:15% 0;
+    width:25vw;
+    height:40vh;
+    background-color: snow;
+    border-radius:5%;
+}
+
+.overviewCards img:hover {
+    box-shadow: 0 0 50px white;
+    transition: all 0.8s ease-in-out;
+}
+
+footer {
+    color:white;
+    display: flex;
+    margin-bottom:0;
+    padding: 2.5% 5% 2.5% 5%;
+}
+
+footer div {
+    flex: 1;
+}
+
+#logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 70%;
+    border-radius:10%;
+    padding: 2.5% 2.5%;
+}
+
+#logo_mini {
+    border-radius:10%;
+    padding: 2.5%;
+    width: 20%;
+    height: 80%;
+}
+
+.logo_hover:hover{
+    box-shadow: 0 0 50px goldenrod;
+    transition: all 0.8s ease-in-out;
+}
+
+#copyright {
+    padding-top:1%;
+    text-align:right;
+    border-top-style: solid;
+    border-top-color: goldenrod;
+    border-top-width: 1px;  
+}

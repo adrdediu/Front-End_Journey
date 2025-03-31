@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select2 Pillbox with Bootstrap 5.1.3</title>
+    
+    <!-- Bootstrap 5.1.3 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS for better Bootstrap and Select2 integration -->
+    <style>
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        
+        .select2-container--default .select2-selection--multiple {
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            min-height: 38px;
+            padding: 0.375rem 0.75rem;
+        }
+        
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
+            background-color: #0d6efd;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            padding: 4px 8px;
+            margin-top: 3px;
+            margin-right: 5px;
+        }
+        
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+            color: white;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+        
+        .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+            color: #f8f9fa;
+        }
+        
+        .select2-dropdown {
+            border: 1px solid #ced4da;
+        }
+        
+        .select2-container--default .select2-results__option--highlighted[aria-selected] {
+            background-color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mb-4">Select2 Pillbox Example</h2>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Tags/Pills Input with Search</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="pillbox-select" class="form-label">Select multiple items:</label>
+                            <select id="pillbox-select" class="form-control" multiple="multiple">
+                                <option value="apple">Apple</option>
+                                <option value="banana">Banana</option>
+                                <option value="cherry">Cherry</option>
+                                <option value="date">Date</option>
+                                <option value="elderberry">Elderberry</option>
+                                <option value="fig">Fig</option>
+                                <option value="grape">Grape</option>
+                                <option value="kiwi">Kiwi</option>
+                                <option value="lemon">Lemon</option>
+                                <option value="mango">Mango</option>
+                                <option value="orange">Orange</option>
+                                <option value="papaya">Papaya</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h6>Selected Values:</h6>
+                            <div id="selected-values" class="p-2 border rounded bg-light">
+                                <em class="text-muted">Nothing selected yet</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Project Tags</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="project-tags" class="form-label">Add project tags:</label>
+                            <select id="project-tags" class="form-control" multiple="multiple">
+                                <option value="frontend">Frontend</option>
+                                <option value="backend">Backend</option>
+                                <option value="design">Design</option>
+                                <option value="database">Database</option>
+                                <option value="api">API</option>
+                                <option value="testing">Testing</option>
+                                <option value="documentation">Documentation</option>
+                                <option value="devops">DevOps</option>
+                                <option value="infrastructure">Infrastructure</option>
+                                <option value="security">Security</option>
+                                <option value="mobile">Mobile</option>
+                                <option value="performance">Performance</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h6>Project Categories:</h6>
+                            <div id="project-categories" class="p-2 border rounded bg-light">
+                                <em class="text-muted">No categories selected</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <button id="get-values" class="btn btn-primary">Get Selected Values</button>
+                    <button id="reset-all" class="btn btn-secondary ms-2">Reset All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Bootstrap 5.1.3 Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Initialize Select2 for the first example
+            $('#pillbox-select').select2({
+                placeholder: 'Search and select items...',
+                allowClear: true,
+                tags: true,
+                tokenSeparators: [',', ' '],
+                width: '100%'
+            });
+            
+            // Initialize Select2 for the project tags example
+            $('#project-tags').select2({
+                placeholder: 'Search and add project tags...',
+                allowClear: true,
+                tags: true,
+                tokenSeparators: [',', ' '],
+                width: '100%'
+            });
+            
+            // Update selected values on change
+            $('#pillbox-select').on('change', function() {
+                updateSelectedValues();
+            });
+            
+            // Update project categories on change
+            $('#project-tags').on('change', function() {
+                updateProjectCategories();
+            });
+            
+            // Get values button click handler
+            $('#get-values').on('click', function() {
+                const fruitValues = $('#pillbox-select').val();
+                const projectValues = $('#project-tags').val();
+                
+                let message = '<h5>Selected Values:</h5>';
+                
+                message += '<p><strong>Fruits:</strong> ';
+                if (fruitValues && fruitValues.length > 0) {
+                    message += fruitValues.join(', ');
+                } else {
+                    message += '<em>None selected</em>';
+                }
+                message += '</p>';
+                
+                message += '<p><strong>Project Tags:</strong> ';
+                if (projectValues && projectValues.length > 0) {
+                    message += projectValues.join(', ');
+                } else {
+                    message += '<em>None selected</em>';
+                }
+                message += '</p>';
+                
+                alert(message);
+            });
+            
+            // Reset button click handler
+            $('#reset-all').on('click', function() {
+                $('#pillbox-select').val(null).trigger('change');
+                $('#project-tags').val(null).trigger('change');
+            });
+            
+            // Helper function to update selected values display
+            function updateSelectedValues() {
+                const values = $('#pillbox-select').val();
+                const container = $('#selected-values');
+                
+                if (values && values.length > 0) {
+                    let html = '';
+                    values.forEach(function(value) {
+                        html += `<span class="badge bg-primary me-2 mb-2">${value}</span>`;
+                    });
+                    container.html(html);
+                } else {
+                    container.html('<em class="text-muted">Nothing selected yet</em>');
+                }
+            }
+            
+            // Helper function to update project categories display
+            function updateProjectCategories() {
+                const values = $('#project-tags').val();
+                const container = $('#project-categories');
+                
+                if (values && values.length > 0) {
+                    let html = '';
+                    values.forEach(function(value) {
+                        html += `<span class="badge bg-success me-2 mb-2">${value}</span>`;
+                    });
+                    container.html(html);
+                } else {
+                    container.html('<em class="text-muted">No categories selected</em>');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
